@@ -2,7 +2,7 @@ name: update_content
 
 env:
   PYTHON_VERSION: "3.8" # set this to the Python version to use
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
 on:
   issues:
@@ -50,4 +50,4 @@ jobs:
         if: steps.commit.outputs.push == 'true'
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GIT_TOKEN }}
